@@ -1,0 +1,24 @@
+---
+
+version: "3.7"
+
+services:
+
+
+  shell:
+    build:
+      context: ./build/sshd
+    image: ***REMOVED***/sshd
+    restart: always
+    ports:
+      - published: 38593
+        target: 22
+    environment:
+      DOCKER_SSH_USER: ***REMOVED***
+      DOCKER_SSH_PASS: ***REMOVED***
+    volumes:
+      - type: bind
+        source: ./dumping_ground
+        target: /home/***REMOVED***
+
+
