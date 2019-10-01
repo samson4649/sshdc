@@ -8,17 +8,17 @@ services:
   shell:
     build:
       context: ./build/sshd
-    image: ***REMOVED***/sshd
+    image: adea/sshd
     restart: always
     ports:
       - published: 38593
         target: 22
     environment:
-      DOCKER_SSH_USER: ***REMOVED***
-      DOCKER_SSH_PASS: ***REMOVED***
+      DOCKER_SSH_USER: jkcollective
+      DOCKER_SSH_PASS: pheikoo4viepoh9A
     volumes:
       - type: bind
         source: ./dumping_ground
-        target: /home/***REMOVED***
+        target: /home/jkcollective
 
 
